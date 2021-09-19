@@ -1,4 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Playground } from './components/Playground';
 
-ReactDOM.render(<h1>hello</h1>, document.getElementById('root'));
+ReactDOM.render(<Playground />, document.getElementById('root'));
