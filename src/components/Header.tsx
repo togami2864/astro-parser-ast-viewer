@@ -21,7 +21,7 @@ const HeaderStyle = styled.header`
   justify-content: space-between;
   align-items: center;
   background: #111827;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 3px solid #ff5e00;
   color: #f3f4f6;
   div {
     display: flex;
