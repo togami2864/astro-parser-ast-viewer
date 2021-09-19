@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { parse } from '@astrojs/parser';
 
+import { Header } from './Header';
 import { Editor } from './Editor';
 import { Parsed } from './Parsed';
 
@@ -26,14 +27,34 @@ export const Playground: React.FC = () => {
   }, [code]);
 
   return (
-    <PlaygroundContainer>
-      <Editor code={code} editCode={editCode} />
-      <Parsed parsedCode={parsedCode} />
-    </PlaygroundContainer>
+    <>
+      <Header />
+      <PlaygroundContainer>
+        <Editor code={code} editCode={editCode} />
+        <Parsed parsedCode={parsedCode} />
+      </PlaygroundContainer>
+    </>
   );
 };
 
 const PlaygroundContainer = styled.div`
   display: flex;
   width: 100%;
+  color: #f3f4f6;
+  .ace_gutter {
+    background: #ff5e00;
+  }
+  .ace_gutter-cell.ace_gutter-active-line {
+    background: #ff5e00;
+    color: #f3f4f6;
+  }
+  .ace-tm {
+    color: #f3f4f6;
+  }
+  .ace-tm .ace_cursor {
+    color: #f3f4f6;
+  }
+  .ace_hidden-cursors .ace_cursor {
+    opacity: 0.7;
+  }
 `;

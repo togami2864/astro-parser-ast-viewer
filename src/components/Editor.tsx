@@ -11,7 +11,17 @@ export const Editor: React.FC<EditorProps> = ({ code, editCode }) => {
   return (
     <AceEditor
       defaultValue={code}
-      style={{ width: '50%' }}
+      width="50vw"
+      height="94vh"
+      fontSize="16px"
+      style={{
+        background: '#111827',
+      }}
+      setOptions={{
+        vScrollBarAlwaysVisible: true,
+        fixedWidthGutter: true,
+        displayIndentGuides: true,
+      }}
       onChange={editCode}
       editorProps={{ $blockScrolling: true }}
     />

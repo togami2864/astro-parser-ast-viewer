@@ -11,10 +11,15 @@ export const Parsed: React.FC<ParsedProps> = ({ parsedCode }) => {
 
 const TextArea = styled.textarea`
   width: 50%;
-  border-color: white;
+  height: 94vh;
+  border-color: #111827;
+  background: #111827;
+  color: #f3f4f6;
+  overflow-y: scroll;
+  font-size: 16px;
   &:focus {
-    border-color: white;
-    background-color: white;
+    border-color: #111827;
+    background-color: #111827;
     outline: none;
   }
 `;
