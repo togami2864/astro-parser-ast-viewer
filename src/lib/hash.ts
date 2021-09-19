@@ -7,13 +7,13 @@ interface State {
   source: string | null;
 }
 
-export const setHash = (state: State): void => {
+export const updateHash = (state: State): void => {
   const hash = compressToEncodedURIComponent(JSON.stringify(state));
   location.hash = hash;
 };
 
 export const readHash = (): State => {
-  const hash = document.location.hash.slice(1);
+  const hash = document.location.hash;
   if (!hash) {
     return { source: null };
   }
