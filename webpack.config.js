@@ -1,15 +1,17 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ForkTsChecker = require("fork-ts-checker-webpack-plugin");
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsChecker = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: {
-    bundle: [path.resolve(__dirname, "src/index.tsx")],
+    bundle: [path.resolve(__dirname, 'src/index.tsx')],
   },
   output: {
-    filename: "[name].js",
-    path: path.join(__dirname, "dist"),
-    chunkFilename: "[name].js",
+    filename: '[name].js',
+    path: path.join(__dirname, 'dist'),
+    chunkFilename: '[name].js',
   },
   module: {
     rules: [
@@ -17,7 +19,7 @@ module.exports = {
         test: /\.ts(x?)$/,
         use: [
           {
-            loader: "ts-loader",
+            loader: 'ts-loader',
             options: {
               transpileOnly: true,
             },
@@ -28,28 +30,28 @@ module.exports = {
       {
         test: /\.mjs$/,
         include: /node_modules/,
-        type: "javascript/auto",
+        type: 'javascript/auto',
       },
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   devServer: {
     compress: true,
     port: 8080,
     open: true,
     historyApiFallback: true,
-    host: "0.0.0.0",
+    host: '0.0.0.0',
   },
   plugins: [
     new ForkTsChecker(),
     new HtmlWebpackPlugin({
       template: `${__dirname}/src/template/index.html`,
-      filename: "index.html",
-      chunks: ["bundle"],
-      inject: "body",
-      scriptLoading: "defer",
+      filename: 'index.html',
+      chunks: ['bundle'],
+      inject: 'body',
+      scriptLoading: 'defer',
     }),
   ],
 };
