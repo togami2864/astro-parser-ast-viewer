@@ -7,6 +7,8 @@ import { Header } from './Header';
 import { Editor } from './Editor';
 import { Parsed } from './Parsed';
 
+import { readHash, setHash } from '../lib/hash';
+
 export const Playground: React.FC = () => {
   const [code, setCode] = useState<string>(initialEditorValue);
   const [parsedCode, setParsedCode] = useState<string>('');
@@ -16,7 +18,17 @@ export const Playground: React.FC = () => {
   };
 
   useEffect(() => {
+    const { source: code } = readHash();
+    if (code) {
+      setCode(code);
+    } else {
+      setCode(initialEditorValue);
+    }
+  }, []);
+
+  useEffect(() => {
     const parseCode = async () => {
+      setHash({ source: code });
       try {
         const newValue = parse(code);
         setParsedCode(JSON.stringify(newValue, null, 2));
