@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import AceEditor from 'react-ace';
 import styled from 'styled-components';
 import { parse } from '@astrojs/parser';
+
+import { Editor } from './Editor';
+import { Parsed } from './Parsed';
 
 export const Playground: React.FC = () => {
   const [code, setCode] = useState<string>('');
@@ -15,7 +17,7 @@ export const Playground: React.FC = () => {
     const parseCode = async () => {
       try {
         const newValue = parse(code);
-        setParsedCode(JSON.stringify(newValue));
+        setParsedCode(JSON.stringify(newValue, null, 2));
       } catch (error) {
         setParsedCode(error as string);
       }
@@ -25,12 +27,13 @@ export const Playground: React.FC = () => {
 
   return (
     <PlaygroundContainer>
-      <AceEditor onChange={editCode} editorProps={{ $blockScrolling: true }} />
-      <textarea value={parsedCode} readOnly />
+      <Editor code={code} editCode={editCode} />
+      <Parsed parsedCode={parsedCode} />
     </PlaygroundContainer>
   );
 };
 
 const PlaygroundContainer = styled.div`
   display: flex;
+  width: 100%;
 `;
