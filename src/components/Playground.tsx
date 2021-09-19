@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { parse } from '@astrojs/parser';
 
+import { initialEditorValue } from '../assets/constants';
 import { Header } from './Header';
 import { Editor } from './Editor';
 import { Parsed } from './Parsed';
 
 export const Playground: React.FC = () => {
-  const [code, setCode] = useState<string>('');
+  const [code, setCode] = useState<string>(initialEditorValue);
   const [parsedCode, setParsedCode] = useState<string>('');
 
   const editCode = (value: string) => {

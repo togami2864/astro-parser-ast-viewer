@@ -1,6 +1,5 @@
 import React from 'react';
 import AceEditor from 'react-ace';
-// import styled from 'styled-components';
 
 interface EditorProps {
   code: string;
@@ -19,8 +18,7 @@ export const Editor: React.FC<EditorProps> = ({ code, editCode }) => {
       }}
       setOptions={{
         vScrollBarAlwaysVisible: true,
-        fixedWidthGutter: true,
-        displayIndentGuides: true,
+        printMargin: false,
       }}
       onChange={editCode}
       editorProps={{ $blockScrolling: true }}
