@@ -35,6 +35,13 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
+  devServer: {
+    compress: true,
+    port: 8080,
+    open: true,
+    historyApiFallback: true,
+    host: "0.0.0.0",
+  },
   plugins: [
     new ForkTsChecker(),
     new HtmlWebpackPlugin({
