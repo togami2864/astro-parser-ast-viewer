@@ -9,7 +9,7 @@ interface EditorProps {
 export const Editor: React.FC<EditorProps> = ({ code, editCode }) => {
   return (
     <AceEditor
-      defaultValue={code}
+      value={code}
       width="50vw"
       height="94vh"
       fontSize="16px"
