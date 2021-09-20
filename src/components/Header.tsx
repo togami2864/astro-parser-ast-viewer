@@ -7,7 +7,13 @@ export const Header: React.FC = () => {
       <div>
         <p>Astro AST Viewer</p>
       </div>
-      <a href="">view on github</a>
+      <a
+        href="https://github.com/togami2864/astro-parser-ast-viewer"
+        target="_blank"
+        rel="noreferrer"
+      >
+        view on github
+      </a>
     </HeaderStyle>
   );
 };
