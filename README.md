@@ -10,4 +10,4 @@ The state editor is stored in URL hash. So, you can share the same screen by sha
 
 - [@astrojs/parser](https://github.com/snowpackjs/astro/tree/main/packages/astro-parser)
 
-This parser could be deprecated because the astro team is working on develping new compiler written by Go.
+This parser could be **deprecated** because the astro team is working on developing new compiler written by Go.
