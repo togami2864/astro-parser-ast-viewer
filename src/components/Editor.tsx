@@ -11,13 +11,14 @@ export const Editor: React.FC<EditorProps> = ({ code, editCode }) => {
     <AceEditor
       value={code}
       width="50vw"
-      height="94vh"
+      height="92vh"
       fontSize="16px"
       style={{
         background: '#111827',
       }}
       setOptions={{
         vScrollBarAlwaysVisible: true,
+        hScrollBarAlwaysVisible: true,
         printMargin: false,
       }}
       onChange={editCode}

@@ -43,20 +43,29 @@ export const Playground: React.FC = () => {
   }, [code]);
 
   return (
-    <>
+    <Application>
       <Header />
       <PlaygroundContainer>
         <Editor code={code} editCode={editCode} />
         <Parsed parsedCode={parsedCode} />
       </PlaygroundContainer>
-    </>
+    </Application>
   );
 };
+
+const Application = styled.main`
+  height: 100vh;
+  box-sizing: border-box;
+`;
 
 const PlaygroundContainer = styled.div`
   display: flex;
   width: 100%;
+  height: 92vh;
   color: #f3f4f6;
+  html {
+    overflow-y: scroll;
+  }
   .ace_gutter {
     background: #ff5e00;
   }

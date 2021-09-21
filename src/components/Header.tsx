@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
 const HeaderStyle = styled.header`
   padding: 10px;
   width: 100%;
-  height: 40px;
+  height: 8vh;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
